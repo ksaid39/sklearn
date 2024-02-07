@@ -9,3 +9,4 @@ _*.sh
 FIXME*
 cover.out
 coverage.txt
+vendor

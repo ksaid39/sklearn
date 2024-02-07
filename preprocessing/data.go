@@ -7,9 +7,9 @@ import (
 
 	"golang.org/x/exp/rand"
 
+	"github.com/pa-m/optimize"
 	"github.com/pa-m/sklearn/base"
 
-	"github.com/pa-m/optimize"
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/stat"
@@ -305,7 +305,6 @@ func (m NumpyLike) Std(X mat.Matrix) *mat.Dense {
 // RobustScaler scales data by removing centering around the Median and
 // removing outliers by Quantile. See python sklearn's RobustScaler
 // http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html.
-//
 type RobustScaler struct {
 	Center          bool
 	Scale           bool
@@ -452,7 +451,9 @@ func (scaler *RobustScaler) InverseTransform(X, Y *mat.Dense) (Xout, Yout *mat.D
 // Parameters
 // ----------
 // X : array-like, shape (nSamples, nFeatures)
-//     Data to use for variance update
+//
+//	Data to use for variance update
+//
 // lastMean : array-like, shape: (nFeatures,)
 // lastVariance : array-like, shape: (nFeatures,)
 // lastSampleCount : int
@@ -460,13 +461,17 @@ func (scaler *RobustScaler) InverseTransform(X, Y *mat.Dense) (Xout, Yout *mat.D
 // -------
 // updatedMean : array, shape (nFeatures,)
 // updatedVariance : array, shape (nFeatures,)
-//     If None, only mean is computed
+//
+//	If None, only mean is computed
+//
 // updatedSampleCount : int
 // References
 // ----------
 // T. Chan, G. Golub, R. LeVeque. Algorithms for computing the sample
-//     variance: recommendations, The American Statistician, Vol. 37, No. 3,
-//     pp. 242-247
+//
+//	variance: recommendations, The American Statistician, Vol. 37, No. 3,
+//	pp. 242-247
+//
 // Also, see the sparse implementation of this in
 // `utils.sparsefuncs.incrMeanVarianceAxis` and
 // `utils.sparsefuncsFast.incrMeanVarianceAxis0`
@@ -1325,19 +1330,22 @@ func (m *PowerTransformer) FitTransform(X, Y mat.Matrix) (Xout, Yout *mat.Dense)
 
 // InverseTransform apply the inverse power transformation using the fitted lambdas.
 // The inverse of the Box-Cox transformation is given by::
-// 	if lambda == 0:
-// 		X = exp(X_trans)
-// 	else:
-// 		X = (X_trans * lambda + 1) ** (1 / lambda)
+//
+//	if lambda == 0:
+//		X = exp(X_trans)
+//	else:
+//		X = (X_trans * lambda + 1) ** (1 / lambda)
+//
 // The inverse of the Yeo-Johnson transformation is given by::
-// 	if X >= 0 and lambda == 0:
-// 		X = exp(X_trans) - 1
-// 	elif X >= 0 and lambda != 0:
-// 		X = (X_trans * lambda + 1) ** (1 / lambda) - 1
-// 	elif X < 0 and lambda != 2:
-// 		X = 1 - (-(2 - lambda) * X_trans + 1) ** (1 / (2 - lambda))
-// 	elif X < 0 and lambda == 2:
-// 		X = 1 - exp(-X_trans)
+//
+//	if X >= 0 and lambda == 0:
+//		X = exp(X_trans) - 1
+//	elif X >= 0 and lambda != 0:
+//		X = (X_trans * lambda + 1) ** (1 / lambda) - 1
+//	elif X < 0 and lambda != 2:
+//		X = 1 - (-(2 - lambda) * X_trans + 1) ** (1 / (2 - lambda))
+//	elif X < 0 and lambda == 2:
+//		X = 1 - exp(-X_trans)
 func (m *PowerTransformer) InverseTransform(X, Y mat.Matrix) (Xout, Yout *mat.Dense) {
 	nSamples, nFeatures := X.Dims()
 	Xout = mat.NewDense(nSamples, nFeatures, nil)

@@ -19,6 +19,8 @@ github.com/jung-kurt/gofpdf v1.10.1 h1:mbprTswkr0n86clAmJ4NGCFC4fdGySCAshWzrYb3x
 github.com/jung-kurt/gofpdf v1.10.1/go.mod h1:s/VXv+TdctEOx2wCEguezYaR7f0OwUAd6H9VGfRkcSs=
 github.com/ksaid39/optimize v0.0.0-20240207033145-29da8169bf0a h1:zZ65XY9UzWOhlo4Jz4ziips+RnZHMSWTwdReQLgA0QQ=
 github.com/ksaid39/optimize v0.0.0-20240207033145-29da8169bf0a/go.mod h1:4lmG2azXdSLvUhRaCqDrbnaOH+pz/1hVlXagffsRRRw=
+github.com/ksaid39/sklearn v1.0.0 h1:rHKlBiP2m4sdYAqktkIG76HRXRJai/cVzery891saqs=
+github.com/ksaid39/sklearn v1.0.0/go.mod h1:az9kUwgNnNE6Dj4wwycFtuVijLyH1/nkg3pKMK0rrtw=
 github.com/pa-m/randomkit v0.0.0-20191001073902-db4fd80633df h1:waQf2YvgkQdOEK4IvtzwNIuFAo2FZd34JtAb/wrLbbc=
 github.com/pa-m/randomkit v0.0.0-20191001073902-db4fd80633df/go.mod h1:rEyYBR/jbMkj6lX7VpWTAPPrjDIi/aNhAXmFuLMZS4o=
 github.com/phpdave11/gofpdi v1.0.7/go.mod h1:vBmVV0Do6hSBHC8uKUQ71JGW+ZGQq74llk/7bXwjDoI=

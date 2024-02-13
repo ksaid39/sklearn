@@ -4,7 +4,7 @@ import (
 	//	"fmt"
 	"math"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 
 	"gonum.org/v1/gonum/mat"
 )
@@ -22,30 +22,40 @@ type constVector = base.MatConst
 // Parameters
 // ----------
 // yTrue : array-like of shape = (nSamples) or (nSamples, nOutputs)
-//     Ground truth (correct) target values.
+//
+//	Ground truth (correct) target values.
+//
 // yPred : array-like of shape = (nSamples) or (nSamples, nOutputs)
-//     Estimated target values.
+//
+//	Estimated target values.
+//
 // sampleWeight : array-like of shape = (nSamples), optional
-//     Sample weights.
+//
+//	Sample weights.
+//
 // multioutput : string in ['rawValues', 'uniformAverage', \
 // 'varianceWeighted'] or None or array-like of shape (nOutputs)
-//     Defines aggregating of multiple output scores.
-//     Array-like value defines weights used to average scores.
-//     Default is "uniformAverage".
-//     'rawValues' :
-//         Returns a full set of scores in case of multioutput input.
-//     'uniformAverage' :
-//         Scores of all outputs are averaged with uniform weight.
-//     'varianceWeighted' :
-//         Scores of all outputs are averaged, weighted by the variances
-//         of each individual output.
-//     .. versionchanged:: 0.19
-//         Default value of multioutput is 'uniformAverage'.
+//
+//	Defines aggregating of multiple output scores.
+//	Array-like value defines weights used to average scores.
+//	Default is "uniformAverage".
+//	'rawValues' :
+//	    Returns a full set of scores in case of multioutput input.
+//	'uniformAverage' :
+//	    Scores of all outputs are averaged with uniform weight.
+//	'varianceWeighted' :
+//	    Scores of all outputs are averaged, weighted by the variances
+//	    of each individual output.
+//	.. versionchanged:: 0.19
+//	    Default value of multioutput is 'uniformAverage'.
+//
 // Returns
 // -------
 // z : float or ndarray of floats
-//     The R^2 score or ndarray of scores if 'multioutput' is
-//     'rawValues'.
+//
+//	The R^2 score or ndarray of scores if 'multioutput' is
+//	'rawValues'.
+//
 // Notes
 // -----
 // This is not a symmetric function.
@@ -54,7 +64,9 @@ type constVector = base.MatConst
 // References
 // ----------
 // .. [1] `Wikipedia entry on the Coefficient of determination
-//         <https://en.wikipedia.org/wiki/CoefficientOfDetermination>`_
+//
+//	<https://en.wikipedia.org/wiki/CoefficientOfDetermination>`_
+//
 // Examples
 // --------
 // >>> from sklearn.metrics import r2Score
@@ -132,24 +144,33 @@ func R2Score(yTrue, yPred mat.Matrix, sampleWeight *mat.Dense, multioutput strin
 // Parameters
 // ----------
 // y_true : array-like of shape = (n_samples) or (n_samples, n_outputs)
-//     Ground truth (correct) target values.
+//
+//	Ground truth (correct) target values.
+//
 // y_pred : array-like of shape = (n_samples) or (n_samples, n_outputs)
-//     Estimated target values.
+//
+//	Estimated target values.
+//
 // sample_weight : array-like of shape = (n_samples), optional
-//     Sample weights.
+//
+//	Sample weights.
+//
 // multioutput : string in ['raw_values', 'uniform_average']
-//     or array-like of shape (n_outputs)
-//     Defines aggregating of multiple output values.
-//     Array-like value defines weights used to average errors.
-//     'raw_values' :
-//         Returns a full set of errors in case of multioutput input.
-//     'uniform_average' :
-//         Errors of all outputs are averaged with uniform weight.
+//
+//	or array-like of shape (n_outputs)
+//	Defines aggregating of multiple output values.
+//	Array-like value defines weights used to average errors.
+//	'raw_values' :
+//	    Returns a full set of errors in case of multioutput input.
+//	'uniform_average' :
+//	    Errors of all outputs are averaged with uniform weight.
+//
 // Returns
 // -------
 // loss : float or ndarray of floats
-//     A non-negative floating point value (the best value is 0.0), or an
-//     array of floating point values, one for each individual target.
+//
+//	A non-negative floating point value (the best value is 0.0), or an
+//	array of floating point values, one for each individual target.
 func MeanSquaredError(yTrue, yPred mat.Matrix, sampleWeight *mat.Dense, multioutput string) *mat.Dense {
 	nSamples, nOutputs := yTrue.Dims()
 	tmp := mat.NewDense(1, nOutputs, nil)
@@ -180,27 +201,37 @@ func MeanSquaredError(yTrue, yPred mat.Matrix, sampleWeight *mat.Dense, multiout
 // Parameters
 // ----------
 // y_true : array-like of shape = (n_samples) or (n_samples, n_outputs)
-//     Ground truth (correct) target values.
+//
+//	Ground truth (correct) target values.
+//
 // y_pred : array-like of shape = (n_samples) or (n_samples, n_outputs)
-//     Estimated target values.
+//
+//	Estimated target values.
+//
 // sample_weight : array-like of shape = (n_samples), optional
-//     Sample weights.
+//
+//	Sample weights.
+//
 // multioutput : string in ['raw_values', 'uniform_average']
-//     or array-like of shape (n_outputs)
-//     Defines aggregating of multiple output values.
-//     Array-like value defines weights used to average errors.
-//     'raw_values' :
-//         Returns a full set of errors in case of multioutput input.
-//     'uniform_average' :
-//         Errors of all outputs are averaged with uniform weight.
+//
+//	or array-like of shape (n_outputs)
+//	Defines aggregating of multiple output values.
+//	Array-like value defines weights used to average errors.
+//	'raw_values' :
+//	    Returns a full set of errors in case of multioutput input.
+//	'uniform_average' :
+//	    Errors of all outputs are averaged with uniform weight.
+//
 // Returns
 // -------
 // loss : float or ndarray of floats
-//     If multioutput is 'raw_values', then mean absolute error is returned
-//     for each output separately.
-//     If multioutput is 'uniform_average' or an ndarray of weights, then the
-//     weighted average of all output errors is returned.
-//     MAE output is non-negative floating point. The best value is 0.0.
+//
+//	If multioutput is 'raw_values', then mean absolute error is returned
+//	for each output separately.
+//	If multioutput is 'uniform_average' or an ndarray of weights, then the
+//	weighted average of all output errors is returned.
+//	MAE output is non-negative floating point. The best value is 0.0.
+//
 // Examples
 // --------
 // >>> from sklearn.metrics import mean_absolute_error

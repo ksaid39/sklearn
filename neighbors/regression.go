@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/metrics"
+	"github.com/ksaid39/sklearn/base"
+	"github.com/ksaid39/sklearn/metrics"
 
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/stat"

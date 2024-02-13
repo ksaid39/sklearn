@@ -9,11 +9,11 @@ import (
 
 	"gonum.org/v1/gonum/floats"
 
-	"github.com/pa-m/sklearn/metrics"
+	"github.com/ksaid39/sklearn/metrics"
 
-	"github.com/pa-m/sklearn/preprocessing"
+	"github.com/ksaid39/sklearn/preprocessing"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 	"gonum.org/v1/gonum/mat"
 
 	"gonum.org/v1/gonum/blas/blas64"
@@ -177,7 +177,8 @@ func (m *LogisticRegression) PredicterClone() base.Predicter {
 
 // forwardPass Perform a forward pass on the network by computing the values
 // of the neurons the output layer.
-//        activations : []blas64.General, length = nLayers - 1
+//
+//	activations : []blas64.General, length = nLayers - 1
 func (m *LogisticRegression) forwardPass(activations []blas64.General) {
 	hiddenActivation := logregActivation["logistic"]
 	var i int

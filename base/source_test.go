@@ -4,8 +4,9 @@ import (
 	"golang.org/x/exp/rand"
 
 	"fmt"
-	"github.com/pa-m/randomkit"
 	"testing"
+
+	"github.com/pa-m/randomkit"
 )
 
 var (

@@ -3,7 +3,7 @@ package linearmodel
 import (
 	"math"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 	"golang.org/x/exp/rand"
 
 	"gonum.org/v1/gonum/blas/blas64"

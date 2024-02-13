@@ -2,14 +2,14 @@ package gaussianprocess
 
 import (
 	"fmt"
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/gaussian_process/kernels"
-	"github.com/pa-m/sklearn/metrics"
+	"github.com/ksaid39/sklearn/base"
+	"github.com/ksaid39/sklearn/gaussian_process/kernels"
+	"github.com/ksaid39/sklearn/metrics"
 	"gonum.org/v1/gonum/blas"
 	"gonum.org/v1/gonum/blas/blas64"
 	"gonum.org/v1/gonum/mat"
 	//	"gorgonia.org/tensor"
-	"github.com/pa-m/sklearn/gaussian_process/tensor"
+	"github.com/ksaid39/sklearn/gaussian_process/tensor"
 	"math"
 )
 

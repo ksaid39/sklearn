@@ -3,8 +3,8 @@ package cluster
 import (
 	"runtime"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/neighbors"
+	"github.com/ksaid39/sklearn/base"
+	"github.com/ksaid39/sklearn/neighbors"
 	"gonum.org/v1/gonum/mat"
 )
 
@@ -75,7 +75,7 @@ func (m *DBSCAN) IsClassifier() bool { return true }
 // A feature array`.
 // m.SampleWeight is used if not nil
 // it is the Weight of each sample, such that a sample with a weight of at least
-// ``min_samples`` is by itself a core sample; a sample with negative
+// “min_samples“ is by itself a core sample; a sample with negative
 // weight may inhibit its eps-neighbor from being core.
 // Note that weights are absolute, and default to 1.
 // Y : Ignored, may be nil

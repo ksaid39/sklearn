@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 
 	"gonum.org/v1/gonum/mat"
 )
@@ -95,10 +95,13 @@ func (m *NearestNeighbors) KNeighbors(X mat.Matrix, NNeighbors int) (distances, 
 
 // KNeighborsGraph Computes the (weighted) graph of k-Neighbors for points in X
 // mode : {‘connectivity’, ‘distance’}, optional
-//     Type of returned matrix: ‘connectivity’ will return the connectivity matrix with ones and zeros, in ‘distance’ the edges are Euclidean distance between points.
+//
+//	Type of returned matrix: ‘connectivity’ will return the connectivity matrix with ones and zeros, in ‘distance’ the edges are Euclidean distance between points.
+//
 // Returns:
 // A : shape = [n_samples, n_samples_fit]
-//     n_samples_fit is the number of samples in the fitted data A[i, j] is assigned the weight of edge that connects i to j.
+//
+//	n_samples_fit is the number of samples in the fitted data A[i, j] is assigned the weight of edge that connects i to j.
 func (m *NearestNeighbors) KNeighborsGraph(X *mat.Dense, NNeighbors int, mode string, includeSelf bool) (graph *mat.Dense) {
 	NSamples, _ := X.Dims()
 	NSamplesFit, _ := m.X.Dims()
@@ -128,19 +131,22 @@ func (m *NearestNeighbors) KNeighborsGraph(X *mat.Dense, NNeighbors int, mode st
 
 // RadiusNeighbors Finds the neighbors within a given radius of a point or points.
 // Return the indices and distances of each point from the dataset
-// lying in a ball with size ``radius`` around the points of the query
+// lying in a ball with size “radius“ around the points of the query
 // array. Points lying on the boundary are included in the results.
 // The result points are *not* necessarily sorted by distance to their
 // query point.
 // Parameters
 // ----------
 // X : array-like, (n_samples, n_features), optional
-// 	The query point or points.
-// 	If not provided, neighbors of each indexed point are returned.
-// 	In this case, the query point is not considered its own neighbor.
+//
+//	The query point or points.
+//	If not provided, neighbors of each indexed point are returned.
+//	In this case, the query point is not considered its own neighbor.
+//
 // radius : float
-// 	Limiting distance of neighbors to return.
-// 	(default is the value passed to the constructor).
+//
+//	Limiting distance of neighbors to return.
+//	(default is the value passed to the constructor).
 func (m *NearestNeighbors) RadiusNeighbors(X *mat.Dense, radius float64) (distances [][]float64, indices [][]int) {
 	NSamples, _ := X.Dims()
 	distances = make([][]float64, NSamples)

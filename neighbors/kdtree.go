@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"sort"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
 )
@@ -48,9 +48,12 @@ func (r *Rectangle) Volume() float64 {
 // Parameters
 // ----------
 // d : int
-// 	Axis to split hyperrectangle along.
+//
+//	Axis to split hyperrectangle along.
+//
 // split : float
-// 	Position along axis `d` to split at.
+//
+//	Position along axis `d` to split at.
 func (r *Rectangle) Split(d int, split float64) (less, greater *Rectangle) {
 	cp := copyFloatSlice
 	mid := cp(r.Maxes)
@@ -119,9 +122,13 @@ func (r *Rectangle) MaxDistanceRectangle(other *Rectangle, p float64) float64 {
 // can be used to rapidly look up the nearest neighbors of any point.
 // Parameters
 // Data : (N,K) mat.Dense The data points to be indexed. This array is not copied, and
-// 	so modifying this data will result in bogus results.
+//
+//	so modifying this data will result in bogus results.
+//
 // Leafsize : int, optional The number of points at which the algorithm switches over to
-// 	brute-force.  Has to be positive.
+//
+//	brute-force.  Has to be positive.
+//
 // Notes
 // The algorithm used is described in Maneewongvatana and Mount 1999.
 // The general idea is that the kd-tree is a binary tree, each of whose
@@ -436,37 +443,50 @@ func (tr *KDTree) _query(X mat.Vector, k int, eps, p float64, distanceUpperBound
 // Parameters
 // ----------
 // x : array_like, last dimension self.m
-// 	An array of points to query.
+//
+//	An array of points to query.
+//
 // k : int, optional
-// 	The number of nearest neighbors to return.
+//
+//	The number of nearest neighbors to return.
+//
 // eps : nonnegative float, optional
-// 	Return approximate nearest neighbors; the kth returned value
-// 	is guaranteed to be no further than (1+eps) times the
-// 	distance to the real kth nearest neighbor.
+//
+//	Return approximate nearest neighbors; the kth returned value
+//	is guaranteed to be no further than (1+eps) times the
+//	distance to the real kth nearest neighbor.
+//
 // p : float, 1<=p<=infinity, optional
-// 	Which Minkowski p-norm to use.
-// 	1 is the sum-of-absolute-values "Manhattan" distance
-// 	2 is the usual Euclidean distance
-// 	infinity is the maximum-coordinate-difference distance
+//
+//	Which Minkowski p-norm to use.
+//	1 is the sum-of-absolute-values "Manhattan" distance
+//	2 is the usual Euclidean distance
+//	infinity is the maximum-coordinate-difference distance
+//
 // distance_upper_bound : nonnegative float, optional
-// 	Return only neighbors within this distance. This is used to prune
-// 	tree searches, so if you are doing a series of nearest-neighbor
-// 	queries, it may help to supply the distance to the nearest neighbor
-// 	of the most recent point.
+//
+//	Return only neighbors within this distance. This is used to prune
+//	tree searches, so if you are doing a series of nearest-neighbor
+//	queries, it may help to supply the distance to the nearest neighbor
+//	of the most recent point.
+//
 // Returns
 // -------
 // d : float or array of floats
-// 	The distances to the nearest neighbors.
-// 	If x has shape tuple+(self.m,), then d has shape tuple if
-// 	k is one, or tuple+(k,) if k is larger than one. Missing
-// 	neighbors (e.g. when k > n or distance_upper_bound is
-// 	given) are indicated with infinite distances.  If k is None,
-// 	then d is an object array of shape tuple, containing lists
-// 	of distances. In either case the hits are sorted by distance
-// 	(nearest first).
+//
+//	The distances to the nearest neighbors.
+//	If x has shape tuple+(self.m,), then d has shape tuple if
+//	k is one, or tuple+(k,) if k is larger than one. Missing
+//	neighbors (e.g. when k > n or distance_upper_bound is
+//	given) are indicated with infinite distances.  If k is None,
+//	then d is an object array of shape tuple, containing lists
+//	of distances. In either case the hits are sorted by distance
+//	(nearest first).
+//
 // i : integer or array of integers
-// 	The locations of the neighbors in self.data. i is the same
-// 	shape as d.
+//
+//	The locations of the neighbors in self.data. i is the same
+//	shape as d.
 func (tr *KDTree) Query(X mat.Matrix, k int, eps, p, distanceUpperBound float64) (dd, ii *mat.Dense) {
 	NSamples, NFeatures := X.Dims()
 	dd, ii = mat.NewDense(NSamples, k, nil), mat.NewDense(NSamples, k, nil)

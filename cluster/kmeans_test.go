@@ -7,8 +7,8 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
+	"github.com/ksaid39/sklearn/base"
+	"github.com/ksaid39/sklearn/datasets"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"

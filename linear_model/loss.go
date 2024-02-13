@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 	"gonum.org/v1/gonum/mat"
 )
 
@@ -29,7 +29,6 @@ var LossFunctions = map[string]Loss{"square": SquareLoss, "log": LogLoss, "cross
 // Alpha, L1Ratio are regularization parameters
 // J: mat.Pow(h-y,2)/2
 // grad:  hprime*(h-y)
-//
 func SquareLoss(Ytrue, X mat.Matrix, Theta, Ypred, Ydiff, grad *mat.Dense, Alpha, L1Ratio float64, nSamples int, activation Activation, disableRegularizationOfFirstFeature bool) (J float64) {
 	Ypred.Mul(X, Theta)
 	Ypred.Apply(func(i, o int, xtheta float64) float64 { return activation.F(xtheta) }, Ypred)
@@ -118,7 +117,6 @@ func LogLoss(Ytrue, X mat.Matrix, Theta, Ypred, Ydiff, grad *mat.Dense, Alpha, L
 // CrossEntropyLoss is the loss for LogisticRegression and Classifiers
 // J: -y*math.Log(h)-(1.-y)*log(1.-h)
 // grad:  hprime*(-y/h + (1-y)/(1-h))
-//
 func CrossEntropyLoss(Ytrue, X mat.Matrix, Theta, Ypred, Ydiff, grad *mat.Dense, Alpha, L1Ratio float64, nSamples int, activation Activation, disableRegularizationOfFirstFeature bool) (J float64) {
 	Ypred.Mul(X, Theta)
 	Ypred.Apply(func(i, o int, xtheta float64) float64 { return panicIfNaN(activation.F(xtheta)) }, Ypred)

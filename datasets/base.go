@@ -15,12 +15,12 @@ import (
 )
 
 var (
-	// dir stores the resolved local path of github.com/pa-m/sklearn
+	// dir stores the resolved local path of github.com/ksaid39/sklearn
 	dir string
 )
 
 func init() {
-	pkg, err := build.Import("github.com/pa-m/sklearn", ".", build.FindOnly)
+	pkg, err := build.Import("github.com/ksaid39/sklearn", ".", build.FindOnly)
 	if err != nil {
 		panic(err)
 	}

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/metrics"
-	"github.com/pa-m/sklearn/preprocessing"
+	"github.com/ksaid39/sklearn/base"
+	"github.com/ksaid39/sklearn/metrics"
+	"github.com/ksaid39/sklearn/preprocessing"
 
 	//"gonum.org/v1/gonum/diff/fd"
 	"math"
@@ -34,24 +34,31 @@ type LinearModel struct {
 // Parameters
 // ----------
 // fitIntercept : boolean, optional, default True
-//     whether to calculate the intercept for this model. If set
-//     to False, no intercept will be used in calculations
-//     (e.g. data is expected to be already centered).
+//
+//	whether to calculate the intercept for this model. If set
+//	to False, no intercept will be used in calculations
+//	(e.g. data is expected to be already centered).
+//
 // normalize : boolean, optional, default False
-//     This parameter is ignored when ``fitIntercept`` is set to False.
-//     If True, the regressors X will be normalized before regression by
-//     subtracting the mean and dividing by the l2-norm.
-//     If you wish to standardize, please use
-//     :class:`sklearn.preprocessing.StandardScaler` before calling ``fit`` on
-//     an estimator with ``normalize=False``.
+//
+//	This parameter is ignored when ``fitIntercept`` is set to False.
+//	If True, the regressors X will be normalized before regression by
+//	subtracting the mean and dividing by the l2-norm.
+//	If you wish to standardize, please use
+//	:class:`sklearn.preprocessing.StandardScaler` before calling ``fit`` on
+//	an estimator with ``normalize=False``.
+//
 // ----------
 // coef : array, shape (nFeatures, ) or (nTargets, nFeatures)
-//     Estimated coefficients for the linear regression problem.
-//     If multiple targets are passed during the fit (y 2D), this
-//     is a 2D array of shape (nTargets, nFeatures), while if only
-//     one target is passed, this is a 1D array of length nFeatures.
+//
+//	Estimated coefficients for the linear regression problem.
+//	If multiple targets are passed during the fit (y 2D), this
+//	is a 2D array of shape (nTargets, nFeatures), while if only
+//	one target is passed, this is a 1D array of length nFeatures.
+//
 // intercept : array
-//     Independent term in the linear model.
+//
+//	Independent term in the linear model.
 type LinearRegression struct {
 	LinearModel
 }

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 	"gonum.org/v1/gonum/mat"
 )
 
@@ -96,7 +96,7 @@ func NewMultiTaskElasticNet() *MultiTaskElasticNet {
 	return regr
 }
 
-//NewLasso creates a *ElasticNetRegression with Alpha=1 and L1Ratio = 1
+// NewLasso creates a *ElasticNetRegression with Alpha=1 and L1Ratio = 1
 func NewLasso() *Lasso {
 	m := NewMultiTaskElasticNet()
 	m.L1Ratio = 1.

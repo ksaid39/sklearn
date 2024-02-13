@@ -3,7 +3,7 @@ package metrics
 import (
 	"fmt"
 
-	"github.com/pa-m/sklearn/preprocessing"
+	"github.com/ksaid39/sklearn/preprocessing"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/stat"
 )
@@ -56,11 +56,13 @@ func F1Score(Ytrue, Ypred *mat.Dense, average string, sampleWeight []float64) fl
 }
 
 // FBetaScore is the weighted harmonic mean of precision and recall,
-//     reaching its optimal value at 1 and its worst value at 0.
-//     The `beta` parameter determines the weight of precision in the combined
-//     score. ``beta < 1`` lends more weight to precision, while ``beta > 1``
-//     favors recall (``beta -> 0`` considers only precision, ``beta -> inf``
-//     only recall)
+//
+//	reaching its optimal value at 1 and its worst value at 0.
+//	The `beta` parameter determines the weight of precision in the combined
+//	score. ``beta < 1`` lends more weight to precision, while ``beta > 1``
+//	favors recall (``beta -> 0`` considers only precision, ``beta -> inf``
+//	only recall)
+//
 // average must be macro|micro|weighted.. //TODO binary,samples
 func FBetaScore(Ytrue, Ypred *mat.Dense, beta float64, average string, sampleWeight []float64) float64 {
 	_, _, f, _ := PrecisionRecallFScoreSupport(Ytrue, Ypred, beta, nil, -1, average, []string{}, sampleWeight)

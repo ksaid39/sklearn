@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
-	linearModel "github.com/pa-m/sklearn/linear_model"
-	"github.com/pa-m/sklearn/metrics"
+	"github.com/ksaid39/sklearn/base"
+	"github.com/ksaid39/sklearn/datasets"
+	linearModel "github.com/ksaid39/sklearn/linear_model"
+	"github.com/ksaid39/sklearn/metrics"
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/mat"
 )

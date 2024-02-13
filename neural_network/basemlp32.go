@@ -13,7 +13,7 @@ import (
 
 	"gonum.org/v1/gonum/blas/blas32"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/blas"
@@ -256,7 +256,8 @@ func NewBaseMultilayerPerceptron32() *BaseMultilayerPerceptron32 {
 
 // forwardPass Perform a forward pass on the network by computing the values
 // of the neurons in the hidden layers and the output layer.
-//        activations : []blas32General, length = nLayers - 1
+//
+//	activations : []blas32General, length = nLayers - 1
 func (mlp *BaseMultilayerPerceptron32) forwardPass(activations []blas32General) {
 	hiddenActivation := Activations32[mlp.Activation]
 	var i int

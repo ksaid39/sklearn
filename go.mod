@@ -1,14 +1,11 @@
 module sklearn
 
-go 1.21.2
-
-replace github.com/pa-m/optimize v0.0.0-20200711091247-a21c355ec24e => github.com/ksaid39/optimize v0.0.0-20240207033145-29da8169bf0a
+go 1.22.0
 
 require (
 	github.com/chewxy/math32 v1.10.1
 	github.com/ksaid39/optimize v0.0.0-20240207044157-8aff33ea0d83
 	github.com/pa-m/randomkit v0.0.0-20191001073902-db4fd80633df
-	github.com/pa-m/sklearn v0.0.0-20200711083454-beb861ee48b1
 	github.com/pkg/errors v0.9.1
 	golang.org/x/exp v0.0.0-20240205201215-2c58cdc269a3
 	gonum.org/v1/gonum v0.14.0
@@ -23,7 +20,6 @@ require (
 	github.com/go-latex/latex v0.0.0-20230307184459-12ec69307ad9 // indirect
 	github.com/go-pdf/fpdf v0.8.0 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
-	github.com/pa-m/optimize v0.0.0-20190612075243-15ee852a6d9a // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	golang.org/x/image v0.11.0 // indirect
 	golang.org/x/text v0.12.0 // indirect

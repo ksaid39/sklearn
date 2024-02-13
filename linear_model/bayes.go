@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
 )
@@ -39,12 +39,13 @@ func (regr *BayesianRidge) PredicterClone() base.Predicter {
 }
 
 // Fit the model
-//         Parameters
-//         ----------
-//         X : numpy array of shape [nSamples,nFeatures]
-//             Training data
-//         y : numpy array of shape [nSamples]
-//             Target values. Will be cast to X's dtype if necessary
+//
+//	Parameters
+//	----------
+//	X : numpy array of shape [nSamples,nFeatures]
+//	    Training data
+//	y : numpy array of shape [nSamples]
+//	    Target values. Will be cast to X's dtype if necessary
 func (regr *BayesianRidge) Fit(Xmatrix, Ymatrix mat.Matrix) base.Fiter {
 	X0, Y0 := base.ToDense(Xmatrix), base.ToDense(Ymatrix)
 	var X, Y, YOffset *mat.Dense
@@ -215,11 +216,15 @@ func (regr *BayesianRidge) GetNOutputs() int {
 // Parameters
 // ----------
 // X : {array-like, sparse matrix}, shape = (nSamples, nFeatures)
-//     Samples.
+//
+//	Samples.
+//
 // Returns
 // -------
 // yMean : array, shape = (nSamples,)
-//     Mean of predictive distribution of query points.
+//
+//	Mean of predictive distribution of query points.
+//
 // """
 func (regr *BayesianRidge) Predict(X mat.Matrix, Ymutable mat.Mutable) *mat.Dense {
 	// d := func(X mat.Matrix) string { r, c := X.Dims(); return fmt.Sprintf("%d,%d", r, c) }

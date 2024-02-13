@@ -2,17 +2,18 @@ package kernels
 
 import (
 	"fmt"
-	"github.com/pkg/errors"
-	"gonum.org/v1/gonum/floats"
 	"math"
 	"reflect"
 	"testing"
+
+	"github.com/pkg/errors"
+	"gonum.org/v1/gonum/floats"
 
 	"gonum.org/v1/gonum/mat"
 
 	"github.com/pa-m/randomkit"
 	//"gorgonia.org/tensor"
-	"github.com/pa-m/sklearn/gaussian_process/tensor"
+	"github.com/ksaid39/sklearn/gaussian_process/tensor"
 )
 
 var _ = []Kernel{&ConstantKernel{}, &WhiteKernel{}, &RBF{}, &DotProduct{}, &Sum{}, &Product{}, &Exponentiation{}}

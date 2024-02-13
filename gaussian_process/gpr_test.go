@@ -1,8 +1,8 @@
 package gaussianprocess
 
 import (
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/gaussian_process/kernels"
+	"github.com/ksaid39/sklearn/base"
+	"github.com/ksaid39/sklearn/gaussian_process/kernels"
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
 	"math"

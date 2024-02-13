@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/ksaid39/sklearn/base"
 
 	"gonum.org/v1/gonum/mat"
 )

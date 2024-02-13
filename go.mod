@@ -1,4 +1,4 @@
-module sklearn
+module github.com/ksaid39/sklearn
 
 go 1.22.0
 
